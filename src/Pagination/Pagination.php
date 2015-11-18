@@ -17,9 +17,14 @@
 		protected $pageParameter;
 
 
-		public function __construct ($page, $perPage, $total, $baseUrl = null, $pageParameter = 'page')
+		public function __construct ($perPage, $total, $page = null, $baseUrl = null, $pageParameter = 'page')
 		{
-			$this->page          = $page ? : 1;
+			if (is_null($page)) {
+				$this->page = $_GET[$pageParameter] ?: 1;
+			} else {
+				$this->page = $page;
+			}
+
 			$this->perPage       = $perPage;
 			$this->total         = $total;
 			$this->pageParameter = $pageParameter;
@@ -34,6 +39,8 @@
 				$queryString = http_build_query($queryParameters);
 				$this->baseUrl = strtok($_SERVER['REQUEST_URI'], '?') . '?' . $queryString;
 			}
+
+			$this->verify();
 		}
 
 
