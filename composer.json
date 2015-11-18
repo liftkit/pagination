@@ -1,0 +1,21 @@
+{
+    "name": "liftkit/pagination",
+    "description": "Pagination library",
+    "autoload": {
+        "psr-4": {
+            "LiftKit\\": "src/",
+            "LiftKit\\Tests\\Unit\\": "tests/unit/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0"
+    },
+    "license": "LGP-2.1",
+    "authors": [
+        {
+            "name": "Ryan Williams",
+            "email": "rwilliams@stream9.net"
+        }
+    ],
+    "require": {}
+}
