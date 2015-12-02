@@ -171,7 +171,7 @@
 
 			$isValidPageNumber = is_numeric($page);
 			$isPositivePageNumber = ($page >= 1);
-			$isNotBeyondLast = ($page <= $this->getPages());
+			$isNotBeyondLast = ($page <= $this->getPages() || $page == 1);
 
 			return $isValidPageNumber && $isPositivePageNumber && $isNotBeyondLast;
 		}
